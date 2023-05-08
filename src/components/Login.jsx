@@ -11,6 +11,7 @@ const Login = () => {
   const [user, setUser] = useState([]);
   const [profile, setProfile] = useState([]);
   const navigate = useNavigate();
+
   const login = useGoogleLogin({
     onSuccess: (codeResponse) => {
       console.log(codeResponse);
@@ -32,6 +33,7 @@ const Login = () => {
           }
         )
         .then((res) => {
+          localStorage.setItem("user", JSON.stringify(res.data));
           const { name, id, picture } = res.data;
           const doc = {
             _id: id,
@@ -43,7 +45,7 @@ const Login = () => {
           client.createIfNotExists(doc).then(() => {
             navigate("/", { replace: true });
           });
-          console.log(name, id, picture);
+          console.log(res.data);
 
           setProfile(res.data);
         })
