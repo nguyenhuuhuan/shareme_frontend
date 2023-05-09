@@ -17,8 +17,6 @@ const Home = () => {
       ? JSON.parse(localStorage.getItem("user"))
       : localStorage.clear();
   useEffect(() => {
-    console.log("asd", userInfo);
-
     const query = userQuery(userInfo.id);
 
     client.fetch(query).then((data) => {
