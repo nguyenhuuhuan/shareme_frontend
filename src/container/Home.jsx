@@ -15,7 +15,7 @@ const Home = () => {
 
   const userInfo = fetchUser();
   useEffect(() => {
-    const query = userQuery(userInfo.id);
+    const query = userQuery(userInfo?.id);
 
     client.fetch(query).then((data) => {
       setUser(data[0]);
@@ -41,9 +41,9 @@ const Home = () => {
           <Link to="/">
             <img src={logo} alt="logo" className="w-28" />
           </Link>
-          <Link to={`user-profile/${user._id ? user._id : 0}`}>
+          <Link to={`user-profile/${user?._id}`}>
             <img
-              src={user.image ? user.image : logo}
+              src={user?.image}
               alt="user-pic"
               className="w-9 h-9 rounded-full"
             />
