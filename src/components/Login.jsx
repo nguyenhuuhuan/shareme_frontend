@@ -9,7 +9,6 @@ import { client } from "../client";
 import { useNavigate } from "react-router-dom";
 const Login = () => {
   const [user, setUser] = useState([]);
-  const [profile, setProfile] = useState([]);
   const navigate = useNavigate();
 
   const login = useGoogleLogin({
@@ -45,9 +44,6 @@ const Login = () => {
           client.createIfNotExists(doc).then(() => {
             navigate("/", { replace: true });
           });
-          console.log(res.data);
-
-          setProfile(res.data);
         })
         .catch((err) => console.log("Huan" + err));
     }

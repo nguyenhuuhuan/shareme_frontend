@@ -23,9 +23,9 @@ const Navbar = ({ searchTerm, setSearchTerm, user }) => {
           className="hidden md:block"
         >
           <img
-            src={user.image}
-            alt="user-image"
             className="w-14 h-12 rounded-lg"
+            src={user.image}
+            alt="user-images"
           />
         </Link>
         <Link
