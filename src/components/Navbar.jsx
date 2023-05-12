@@ -5,7 +5,7 @@ const Navbar = ({ searchTerm, setSearchTerm, user }) => {
   const navigate = useNavigate();
   // if (!user) return null;
   return (
-    <div className="flex gap-2 md:gap-5 w-full mt- pb-7">
+    <div className="flex gap-2 md:gap-5 w-full mt-5 pb-7">
       <div className="flex justify-start items-center w-full px-2 rounded-md bg-white border-none outline-none focus-within:shadow-sm">
         <IoMdSearch fontSize={21} className="ml-1" />
         <input
@@ -18,14 +18,11 @@ const Navbar = ({ searchTerm, setSearchTerm, user }) => {
         />
       </div>
       <div className="flex gap-3 ">
-        <Link
-          to={`user-profile/${user._id ? user._id : 0}`}
-          className="hidden md:block"
-        >
+        <Link to={`user-profile/${user?._id}`} className="hidden md:block">
           <img
             className="w-14 h-12 rounded-lg"
-            src={user.image}
-            alt="user-images"
+            src={user?.image}
+            alt="user-iic"
           />
         </Link>
         <Link

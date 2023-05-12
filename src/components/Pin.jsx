@@ -11,7 +11,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
   const navigate = useNavigate();
   const user = fetchUser();
 
-  const alreadySaved = save?.filter((item) => item.postedBy._id === user.id)
+  const alreadySaved = save?.filter((item) => item?.postedBy?._id === user?.id)
     .length;
 
   const savePin = (id) => {
@@ -106,11 +106,11 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
                 >
                   <BsFillArrowUpRightCircleFill />
                   {destination.length > 15
-                    ? `${destination.slice(0, 15)}...`
+                    ? `${destination?.slice(0, 15)}...`
                     : destination}
                 </a>
               )}
-              {postedBy._id === user.id && (
+              {postedBy?._id === user?.id && (
                 <button
                   type="button"
                   onClick={(e) => {

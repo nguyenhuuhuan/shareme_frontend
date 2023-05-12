@@ -129,7 +129,7 @@ const CreatePin = ({ user }) => {
             </label>
           </div>
         </div>
-        <div className="flex flex-1 flex-col gap-6 lg:pl mt-5 w-full">
+        <div className="flex flex-1 flex-col gap-6 lg:pl-5 mt-5 w-full">
           <input
             type="text"
             value={title}
@@ -138,7 +138,7 @@ const CreatePin = ({ user }) => {
             className="outline-none text-2xl sm:text-3xl font-bold border-b-2 border-gray-200 p-2"
           />
           {user && (
-            <div className="flex gap-2 my-2 items-center bg-white rounded-lg ">
+            <div className="flex gap-2 mt-2 mb-2 items-center bg-white rounded-lg ">
               <img className="w-10 h-10 rounded-full" alt="user-profile" />
               <p className="font-bold">{user.userName}</p>
             </div>
@@ -159,14 +159,14 @@ const CreatePin = ({ user }) => {
           />
           <div className="flex flex-col">
             <div>
-              <p className="mb-2 font-semibold text-lg sm:text-xl">
+              <p className="mb-2 font-semibold text:lg sm:text-xl">
                 Choose Pin Category
               </p>
               <select
                 onChange={(e) => setCategory(e.target.value)}
                 className="outline-none w-4/5 text-base border-b-2 border-gray-200 p-2 rounded-md cursor-pointer"
               >
-                <option value="other" className="bg-white">
+                <option value="others" className="sm:text-bg bg-white">
                   Select Category
                 </option>
 

@@ -50,7 +50,7 @@ const UserProfile = () => {
         setPins(data);
       });
     }
-  });
+  }, [text, userId]);
 
   if (!user) {
     return <Spinner message="Loading profile..." />;
