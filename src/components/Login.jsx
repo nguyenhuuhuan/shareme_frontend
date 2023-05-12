@@ -13,7 +13,6 @@ const Login = () => {
 
   const login = useGoogleLogin({
     onSuccess: (codeResponse) => {
-      console.log(codeResponse);
       setUser(codeResponse);
     },
     onError: (error) => console.log("Login Failed:", error),
@@ -48,24 +47,7 @@ const Login = () => {
         .catch((err) => console.log("Huan" + err));
     }
   }, [user]);
-  // const responseGoogle = (response) => {
-  //   console.log(response);
 
-  //   localStorage.setItem("user", JSON.stringify(response.profileObj));
-  //   console.log(response.profileObj);
-  // const { name, googleId, imageUrl } = response.profileObj;
-
-  // const doc = {
-  //   _id: googleId,
-  //   _type: "user",
-  //   userName: name,
-  //   image: imageUrl,
-  // };
-
-  // client.createIfNotExists(doc).then(() => {
-  //   navigate("/", { replace: true });
-  // });
-  // };
   return (
     <div className="flex justify-start items-center flex-col h-screen">
       <div className="relative w-full h-full">

@@ -20,7 +20,7 @@ const Home = () => {
     client.fetch(query).then((data) => {
       setUser(data[0]);
     });
-  }, []);
+  }, [userInfo?.id]);
 
   useEffect(() => {
     scrollRef.current.scrollTo(0, 0);
