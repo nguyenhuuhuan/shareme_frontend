@@ -44,7 +44,7 @@ const Login = () => {
             navigate("/", { replace: true });
           });
         })
-        .catch((err) => console.log("Huan" + err));
+        .catch((err) => console.log(err));
     }
   }, [user]);
 

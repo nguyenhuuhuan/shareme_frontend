@@ -16,7 +16,6 @@ const Feed = () => {
       const query = searchQuery(categoryId);
 
       client.fetch(query).then((data) => {
-        console.log("ASf", data);
         setPins(data);
         setLoading(false);
       });
